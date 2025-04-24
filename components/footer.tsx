@@ -25,15 +25,6 @@ export default function Footer() {
               <GithubIcon className="h-5 w-5" />
             </a>
             <a
-              href="https://twitter.com/fairy_pitta"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-sky-500 transition-colors"
-              aria-label="Twitter"
-            >
-              <TwitterIcon className="h-5 w-5" />
-            </a>
-            <a
               href="mailto:momotus.lessonii@gmail.com"
               className="text-muted-foreground hover:text-sky-500 transition-colors"
               aria-label="Email"
