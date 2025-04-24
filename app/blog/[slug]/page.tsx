@@ -53,7 +53,7 @@ export default async function BlogPost({ params }: { params: { slug: string } })
     <ScrollToTop>
       <div className="min-h-screen bg-background">
         {/* ナビバーの高さを考慮したパディング */}
-        <div className="pt-16 md:pt-20">
+        <div className="pt-14 md:pt-16">
           <div className="container mx-auto px-4 py-12">
             <div className="max-w-3xl mx-auto">
               <Button variant="ghost" className="mb-6" asChild>

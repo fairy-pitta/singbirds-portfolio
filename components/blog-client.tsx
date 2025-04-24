@@ -71,7 +71,7 @@ export default function BlogClient({ initialPosts, initialTags }: BlogClientProp
   return (
     <div className="min-h-screen bg-background">
       {/* ナビバーの高さを考慮したヒーローセクション */}
-      <div className="pt-16 md:pt-20">
+      <div className="pt-14 md:pt-16">
         <div className="relative overflow-hidden">
           {/* 鳥の背景画像を更新 */}
           <div className="absolute inset-0 z-0">
