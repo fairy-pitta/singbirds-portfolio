@@ -24,7 +24,7 @@ export default function Hero() {
           src="/motmot.jpg"
           alt="Yellow bird with black head"
           fill
-          className="object-cover object-right-top opacity-70"
+          className="object-cover object-center opacity-80"
           sizes="100vw"
           priority
           quality={90}
