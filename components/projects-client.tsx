@@ -50,7 +50,7 @@ export default function ProjectsClient({ initialProjects }: ProjectsClientProps)
         <div className="relative overflow-hidden">
           {/* 鳥の背景画像を更新 */}
           <div className="absolute inset-0 z-0">
-            <Image src="/projects_hero.jpg" alt="Bird on tree bark" fill className="object-cover" priority />
+            <Image src="/projects_hero.JPG" alt="Bird on tree bark" fill className="object-cover" priority />
             {/* ヘッダー部分の背景グラデーションを灰色から緑色に変更 */}
             <div className="absolute inset-0 bg-gradient-to-r from-green-800/40 via-green-700/30 to-green-600/20"></div>
           </div>
