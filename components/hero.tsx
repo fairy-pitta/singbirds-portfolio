@@ -21,7 +21,7 @@ export default function Hero() {
     <div className="min-h-screen flex flex-col justify-center relative overflow-hidden pt-20">
       <div className="absolute inset-0 z-0">
         <Image
-          src="/bright-canary.png"
+          src="/motmot.jpg"
           alt="Yellow bird with black head"
           fill
           className="object-cover object-right-top opacity-70"

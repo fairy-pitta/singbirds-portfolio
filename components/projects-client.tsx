@@ -50,12 +50,12 @@ export default function ProjectsClient({ initialProjects }: ProjectsClientProps)
         <div className="relative overflow-hidden">
           {/* 鳥の背景画像を更新 */}
           <div className="absolute inset-0 z-0">
-            <Image src="/robin-spring-branch.png" alt="Bird on tree bark" fill className="object-cover" priority />
+            <Image src="/projects_hero.jpg" alt="Bird on tree bark" fill className="object-cover" priority />
             {/* ヘッダー部分の背景グラデーションを灰色から緑色に変更 */}
-            <div className="absolute inset-0 bg-gradient-to-r from-green-800/80 via-green-700/70 to-green-600/60"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-green-800/40 via-green-700/30 to-green-600/20"></div>
           </div>
 
-          <div className="container mx-auto px-4 py-16 relative z-10">
+          <div className="container mx-auto px-4 py-24 md:py-32 relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
