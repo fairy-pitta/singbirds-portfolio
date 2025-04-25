@@ -1,6 +1,8 @@
 import fs from "fs"
 import path from "path"
 import matter from "gray-matter"
+import { readFile } from "fs/promises"
+import { access } from "fs/promises"
 
 // Content directory paths
 const blogDirectory = path.join(process.cwd(), "content", "blog")
@@ -87,15 +89,12 @@ export function getAllProjectSlugs() {
 }
 
 // Get blog post content
-export function getBlogPost(slug: string): BlogPost | null {
+export async function getBlogPost(slug: string): Promise<BlogPost | null> {
   try {
     const fullPath = path.join(blogDirectory, `${slug}.md`)
-    if (!fs.existsSync(fullPath)) {
-      return null
-    }
-    const fileContents = fs.readFileSync(fullPath, "utf8")
+    await access(fullPath)  // ファイルが存在するかチェック
+    const fileContents = await readFile(fullPath, "utf8")
     const { data, content } = matter(fileContents)
-
     return {
       slug,
       frontmatter: data as BlogFrontmatter,

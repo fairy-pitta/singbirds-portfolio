@@ -7,8 +7,9 @@ import { getProject, getAllProjectSlugs } from "@/lib/content"
 import { markdownToHtml } from "@/lib/markdown"
 import ScrollToTop from "@/components/scroll-to-top"
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const project = getProject(params.slug)
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params
+  const project = getProject(slug)
 
   if (!project) {
     return {
@@ -27,8 +28,9 @@ export function generateStaticParams() {
   return getAllProjectSlugs()
 }
 
-export default async function ProjectDetail({ params }: { params: { slug: string } }) {
-  const project = getProject(params.slug)
+export default async function ProjectDetail({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const project = getProject(slug)
 
   if (!project) {
     return (
