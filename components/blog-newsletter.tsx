@@ -34,7 +34,7 @@ export default function BlogNewsletter() {
   }
 
   return (
-    <Card className="bg-green-50 dark:bg-green-950/20 border-green-100 dark:border-green-900/50">
+    <Card className="bg-green-50 border-green-100">
       <CardContent className="p-6">
         <div className="text-center max-w-xl mx-auto">
           <h3 className="text-xl font-bold mb-2">Stay Updated</h3>
@@ -46,7 +46,7 @@ export default function BlogNewsletter() {
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="flex items-center justify-center gap-2 text-green-600 dark:text-green-400 p-2 bg-green-50 dark:bg-green-900/20 rounded-md"
+              className="flex items-center justify-center gap-2 text-green-600 p-2 bg-green-50 rounded-md"
             >
               <CheckCircle className="h-5 w-5" />
               <span>Thanks for subscribing!</span>
@@ -58,7 +58,7 @@ export default function BlogNewsletter() {
                   <Input
                     type="email"
                     placeholder="Your email"
-                    className="pl-9 bg-white dark:bg-gray-950"
+                    className="pl-9 bg-white"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
@@ -78,7 +78,7 @@ export default function BlogNewsletter() {
                 </Button>
               </div>
 
-              {error && <p className="text-sm text-red-600 dark:text-red-400 mt-2">{error}</p>}
+              {error && <p className="text-sm text-red-600 mt-2">{error}</p>}
             </form>
           )}
         </div>
