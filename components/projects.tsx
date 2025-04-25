@@ -74,7 +74,9 @@ export default function Projects({ projects = [] }: ProjectsProps) {
                     />
                   </div>
                   <CardContent className="p-6 flex-grow">
-                    <h3 className="text-xl font-semibold mb-2">{project.frontmatter.title}</h3>
+                    <Link href={`/projects/${project.slug}`} className="hover:text-sky-600 transition-colors">
+                      <h3 className="text-xl font-semibold mb-2">{project.frontmatter.title}</h3>
+                    </Link>
                     <p className="text-muted-foreground mb-4">{project.frontmatter.description}</p>
                     <div className="flex flex-wrap gap-2">
                       {project.frontmatter.tags.map((tag) => (

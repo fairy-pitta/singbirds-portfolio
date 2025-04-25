@@ -147,7 +147,9 @@ export default function Blog({ posts = [] }: BlogProps) {
                           {post.frontmatter.readTime}
                         </span>
                       </div>
-                      <h3 className="text-xl font-semibold mb-2">{post.frontmatter.title}</h3>
+                      <Link href={`/blog/${post.slug}`} className="hover:text-sky-600 transition-colors">
+                        <h3 className="text-xl font-semibold mb-2">{post.frontmatter.title}</h3>
+                      </Link>
                       <p className="text-muted-foreground mb-4 line-clamp-2">{post.frontmatter.excerpt}</p>
                       <div className="flex flex-wrap gap-2 mt-auto">
                         {post.frontmatter.tags.slice(0, 2).map((tag) => (

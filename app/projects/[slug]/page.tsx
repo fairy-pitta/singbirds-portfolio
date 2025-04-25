@@ -118,7 +118,9 @@ export default async function ProjectDetail({ params }: { params: { slug: string
               </div>
             )}
 
-            <div className="prose prose-green max-w-none" dangerouslySetInnerHTML={{ __html: contentHtml }} />
+            <div className="prose prose-green prose-img:rounded-xl 
+            prose-headings:scroll-mt-8 prose-a:text-green-600 
+            max-w-none sm:prose-lg" dangerouslySetInnerHTML={{ __html: contentHtml }} />
 
             {project.frontmatter.gallery && project.frontmatter.gallery.length > 0 && (
               <div className="mt-12">

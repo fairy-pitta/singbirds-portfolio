@@ -177,7 +177,9 @@ export default function BlogClient({ initialPosts, initialTags }: BlogClientProp
                             {post.frontmatter.readTime}
                           </span>
                         </div>
-                        <h2 className="text-xl font-semibold mb-2">{post.frontmatter.title}</h2>
+                        <Link href={`/blog/${post.slug}`} className="hover:text-green-600 transition-colors">
+                          <h2 className="text-xl font-semibold mb-2">{post.frontmatter.title}</h2>
+                        </Link>
                         <p className="text-muted-foreground mb-4">{post.frontmatter.excerpt}</p>
                         <div className="flex flex-wrap gap-2">
                           {post.frontmatter.tags.map((tag: string) => (
