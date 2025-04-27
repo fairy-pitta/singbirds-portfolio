@@ -1,5 +1,5 @@
 ---
-title: "Sg Bird Call Quiz"
+title: "Learning Singapore’s Birds by Ear: A Look at the SingBirds Call Quiz"
 description: "An interactive quiz web app to test out your bird call knowledge"
 date: "Oct 15, 2024"
 coverImage: "/projects/callquiz/CallQuiz_main.png"
@@ -14,7 +14,7 @@ gallery: [
 ]
 ---
 
-# 🐦 SingBirds Call Quiz App
+# Learning Singapore’s Birds by Ear: A Look at the SingBirds Call Quiz
 
 ## Overview
 
@@ -33,7 +33,7 @@ Players view a **spectrogram** of a bird call and listen to the audio recording 
   - See which birds you identified correctly or incorrectly.
   - Access bird information via Wikipedia API after answering.
   - View bird images dynamically pulled from Wikipedia.
-- 🌎 **Hotspot and Country Selection**: Select specific countries (e.g., Singapore) and birding hotspots.
+- 🌎 **Hotspot and Country Selection**: Select specific countries (currently only Singapore) and birding hotspots.
 - 🎚️ **Adjustable Quiz Settings**: Set the number of questions.
 - 📊 **Quiz Result Summary**: Review your score, accuracy, and species performance.
 
@@ -72,12 +72,12 @@ Players view a **spectrogram** of a bird call and listen to the audio recording 
 
 ## App Flow
 
-1. Player selects a country and optionally a hotspot.
-2. App retrieves a list of birds based on recent observations.
+1. Player selects a country (currently only Singapore) and a hotspot.
+2. App retrieves a list of birds based on recent observations (snapshot taken in Oct 2024).
 3. Spectrogram and audio are displayed.
 4. Player submits an answer.
 5. App shows feedback, Wikipedia information, and bird photo.
-6. After 10 questions, a final score and breakdown are shown.
+6. After the quiz, a final score and breakdown are shown.
 
 
 
