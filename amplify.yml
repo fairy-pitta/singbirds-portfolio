@@ -3,6 +3,7 @@ frontend:
   phases:
     preBuild:
       commands:
+        - echo "RESEND_API=$RESEND_API" >> .env.local
         - npm install --legacy-peer-deps
     build:
       commands:
