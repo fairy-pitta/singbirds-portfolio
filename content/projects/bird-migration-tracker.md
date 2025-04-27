@@ -1,99 +1,86 @@
 ---
-title: "Bird Migration Tracker"
-description: "An interactive web application for tracking and visualizing bird migration patterns across Southeast Asia"
-date: "June 15, 2023"
-coverImage: "/bird-migration-dashboard.png"
-tags: ["React", "D3.js", "GIS", "Avian Research"]
-liveUrl: "https://bird-migration-tracker.example.com"
-githubUrl: "https://github.com/username/bird-migration-tracker"
+title: "Sg Bird Call Quiz"
+description: "An interactive quiz web app to test out your bird call knowledge"
+date: "Oct 15, 2024"
+coverImage: "/projects/callquiz/CallQuiz_main.png"
+tags: ["React", "Django", "Birds"]
+liveUrl: "https://quiz.singbirds.net/"
+githubUrl: "https://github.com/fairy-pitta/Singbirds-frontend"
 gallery: [
-  "/bird-tracking-dashboard.png",
-  "/bird-migration-tracking.png"
+  "/projects/callquiz/CallQuiz_correct.png",
+  "/projects/callquiz/CallQuiz_home.png",
+  "/projects/callquiz/CallQuiz_result.png",
+  "/projects/callquiz/CallQuiz_top.png"
 ]
 ---
 
-# Bird Migration Tracker
+# 🐦 SingBirds Call Quiz App
 
-## Project Overview
+## Overview
 
-The Bird Migration Tracker is an interactive web application designed to visualize and analyze bird migration patterns across Southeast Asia. This tool helps researchers, conservationists, and bird enthusiasts understand migration routes, timing, and how these patterns are affected by environmental changes.
+SingBirds Call Quiz is an interactive web application that challenges players to identify bird species by their songs. The game is centered around birds found in **Singapore**, making it both a fun and educational experience.
 
-## Key Features
+Players view a **spectrogram** of a bird call and listen to the audio recording before choosing the correct bird species from multiple-choice options. After submitting an answer, they can view detailed information and a photo of the bird.
 
-### Interactive Migration Maps
+---
 
-The core of the application is a set of interactive maps built with Leaflet.js and D3.js that display:
+## Features
 
-- Real-time and historical migration routes
-- Population density heatmaps
-- Stopover locations and duration analysis
-- Environmental data overlays (weather patterns, habitat changes)
+- 🎧 **Bird Call Audio**: Listen to real bird recordings.
+- 📈 **Spectrogram Display**: Visualize bird calls using spectrograms.
+- ❓ **Multiple-Choice Questions**: Pick the correct species from a list of options.
+- 📝 **Detailed Feedback**:
+  - See which birds you identified correctly or incorrectly.
+  - Access bird information via Wikipedia API after answering.
+  - View bird images dynamically pulled from Wikipedia.
+- 🌎 **Hotspot and Country Selection**: Select specific countries (e.g., Singapore) and birding hotspots.
+- 🎚️ **Adjustable Quiz Settings**: Set the number of questions.
+- 📊 **Quiz Result Summary**: Review your score, accuracy, and species performance.
 
-### Data Analysis Dashboard
+---
 
-The dashboard provides tools for analyzing migration data:
-
-- Temporal analysis of migration timing
-- Species comparison tools
-- Year-over-year trend analysis
-- Climate correlation studies
-
-### Citizen Science Integration
-
-The platform incorporates data from citizen scientists:
-
-- Bird sighting submissions
-- Validation and verification systems
-- Contributor recognition and gamification
-- Educational resources on migration
-
-## Technical Implementation
+## Tech Stack
 
 ### Frontend
-
-- React for the user interface
-- D3.js and Leaflet.js for data visualization
-- Tailwind CSS for styling
-- Framer Motion for animations
+- [React](https://react.dev/)
+- [Tailwind CSS](https://tailwindcss.com/) for styling
 
 ### Backend
+- [Django](https://www.djangoproject.com/) with Django REST Framework
+- Custom APIs serving species lists, hotspot data, and bird observation records
 
-- Node.js with Express
-- MongoDB for data storage
-- Python for data processing and analysis
-- AWS S3 for image storage
+### Audio Processing
+- [Librosa](https://librosa.org/) for audio analysis
+- [Matplotlib](https://matplotlib.org/) for spectrogram generation
 
-### Data Sources
+---
 
-- GPS tracking data from research partners
-- eBird API integration
-- Weather and climate data APIs
-- Satellite imagery for habitat analysis
+## Data Sources
 
-## Impact and Results
+- **eBird API**:
+  - Retrieves Singapore hotspots
+  - Gets bird species observed at hotspots over the past 30 days (snapshot taken in October)
 
-The Bird Migration Tracker has been used by:
+- **Xeno-Canto API**:
+  - Provides bird song recordings
+  - Filters recordings with **Quality A** and durations between **0–30 seconds**
 
-- 12 research institutions across Southeast Asia
-- Over 500 citizen scientists contributing data
-- Conservation planning initiatives in 4 countries
-- Educational programs reaching 1,000+ students
+- **Wikipedia API**:
+  - Fetches species descriptions and images dynamically
 
-The platform has helped identify:
+---
 
-- 3 previously unknown migration routes
-- 5 critical stopover locations in need of conservation
-- Significant shifts in migration timing due to climate change
+## App Flow
 
-## Future Development
+1. Player selects a country and optionally a hotspot.
+2. App retrieves a list of birds based on recent observations.
+3. Spectrogram and audio are displayed.
+4. Player submits an answer.
+5. App shows feedback, Wikipedia information, and bird photo.
+6. After 10 questions, a final score and breakdown are shown.
 
-Planned enhancements include:
 
-- Machine learning for migration prediction
-- Mobile app development
-- Expanded coverage to include more species
-- Integration with other regional tracking systems
 
-## Acknowledgements
+Made with ❤️ for bird lovers around the world.
 
-This project was developed in collaboration with the Southeast Asian Bird Conservation Network and funded by a grant from the International Conservation Technology Initiative.
+
