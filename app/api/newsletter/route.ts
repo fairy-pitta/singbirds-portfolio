@@ -3,21 +3,28 @@ import { resend } from "@/lib/resend"
 import { NextResponse } from "next/server"
 
 export async function POST(req: Request) {
-  const { email } = await req.json()
-
   try {
-    await resend.emails.send({
-      from: "newsletter@singbirds.net",  // ニュースレター用のFromアドレス
-      to: "shunaruna@gmail.com",         // あなたが登録を受け取りたいメールアドレス
+    const { email } = await req.json()
+
+    if (!email) {
+      return NextResponse.json({ success: false, error: "No email provided" }, { status: 400 })
+    }
+
+    const result = await resend.emails.send({
+      from: "newsletter@singbirds.net",
+      to: "あなたの受信アドレス", 
       subject: "New Newsletter Subscriber",
-      html: `
-        <p><strong>New subscriber email:</strong> ${email}</p>
-      `,
+      html: `<p><strong>New subscriber email:</strong> ${email}</p>`,
     })
 
+    if (result.error) {
+      console.error("Resend error:", result.error)
+      return NextResponse.json({ success: false, error: result.error }, { status: 500 })
+    }
+
     return NextResponse.json({ success: true })
-  } catch (error) {
-    console.error(error)
-    return NextResponse.json({ success: false }, { status: 500 })
+  } catch (error: any) {
+    console.error("Catch block error:", error.message || error)
+    return NextResponse.json({ success: false, error: error.message || "Unknown error" }, { status: 500 })
   }
 }
