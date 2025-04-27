@@ -40,43 +40,59 @@ export default function Contact() {
   }
 
   // コンタクトフォームの送信ハンドラ
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsContactSubmitting(true)
-
-    // 送信シミュレーション
-    setTimeout(() => {
-      setIsContactSubmitting(false)
-      setIsContactSubmitted(true)
-      setFormState({
-        name: "",
-        email: "",
-        message: "",
+  
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formState),
       })
-
-      // 5秒後に成功メッセージをリセット
+  
+      if (!response.ok) throw new Error("Failed to send message")
+  
+      setIsContactSubmitted(true)
+      setFormState({ name: "", email: "", message: "" })
+  
       setTimeout(() => {
         setIsContactSubmitted(false)
       }, 5000)
-    }, 1500)
+    } catch (error) {
+      console.error(error)
+      alert("Failed to send message. Please try again later.")
+    } finally {
+      setIsContactSubmitting(false)
+    }
   }
 
   // ニュースレターフォームの送信ハンドラ
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsNewsletterSubmitting(true)
-
-    // 送信シミュレーション
-    setTimeout(() => {
-      setIsNewsletterSubmitting(false)
+  
+    try {
+      const response = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: newsletterEmail }),
+      })
+  
+      if (!response.ok) throw new Error("Failed to subscribe")
+  
       setIsSubscribed(true)
       setNewsletterEmail("")
-
-      // 3秒後に成功メッセージをリセット
+  
       setTimeout(() => {
         setIsSubscribed(false)
       }, 3000)
-    }, 1000)
+    } catch (error) {
+      console.error(error)
+      alert("Failed to subscribe. Please try again later.")
+    } finally {
+      setIsNewsletterSubmitting(false)
+    }
   }
 
   return (
@@ -103,10 +119,10 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <Card className="h-full border-sky-100 dark:border-sky-800 shadow-sm hover:shadow-md transition-shadow bg-white/85 backdrop-blur-sm">
+            <Card className="h-full border-sky-100 shadow-sm hover:shadow-md transition-shadow bg-white/85 backdrop-blur-sm">
               <CardContent className="p-8">
                 <div className="mb-6">
-                  <h2 className="text-2xl font-bold mb-2 text-sky-700 dark:text-sky-300">Get In Touch</h2>
+                  <h2 className="text-2xl font-bold mb-2 text-sky-700">Get In Touch</h2>
                   <div className="w-12 h-1 bg-gradient-to-r from-sky-400 to-sky-500 rounded-full mb-4"></div>
                   <p className="text-muted-foreground">
                     Have a question or want to collaborate? Send me a message and I'll get back to you soon.
@@ -117,11 +133,11 @@ export default function Contact() {
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    className="bg-sky-50 dark:bg-sky-900/20 border border-sky-100 dark:border-sky-800 rounded-lg p-6 text-center"
+                    className="bg-sky-50 border border-sky-100 rounded-lg p-6 text-center"
                   >
-                    <CheckCircle className="h-12 w-12 mx-auto text-sky-500 dark:text-sky-400 mb-4" />
-                    <h3 className="text-xl font-semibold mb-2 text-sky-700 dark:text-sky-300">Message Sent!</h3>
-                    <p className="text-sky-600 dark:text-sky-400">
+                    <CheckCircle className="h-12 w-12 mx-auto text-sky-500 mb-4" />
+                    <h3 className="text-xl font-semibold mb-2 text-sky-700">Message Sent!</h3>
+                    <p className="text-sky-600">
                       Thank you for reaching out. I'll get back to you as soon as possible.
                     </p>
                   </motion.div>
@@ -130,7 +146,7 @@ export default function Contact() {
                     <div>
                       <label
                         htmlFor="name"
-                        className="text-sm font-medium block mb-1.5 text-gray-700 dark:text-gray-300"
+                        className="text-sm font-medium block mb-1.5 text-gray-70"
                       >
                         Name
                       </label>
@@ -140,7 +156,7 @@ export default function Contact() {
                         value={formState.name}
                         onChange={handleChange}
                         placeholder="Your name"
-                        className="border-sky-100 dark:border-sky-800 focus:border-sky-300 dark:focus:border-sky-600"
+                        className="border-sky-100 focus:border-sky-300"
                         required
                       />
                     </div>
@@ -148,7 +164,7 @@ export default function Contact() {
                     <div>
                       <label
                         htmlFor="email"
-                        className="text-sm font-medium block mb-1.5 text-gray-700 dark:text-gray-300"
+                        className="text-sm font-medium block mb-1.5 text-gray-700"
                       >
                         Email
                       </label>
@@ -159,7 +175,7 @@ export default function Contact() {
                         value={formState.email}
                         onChange={handleChange}
                         placeholder="your.email@example.com"
-                        className="border-sky-100 dark:border-sky-800 focus:border-sky-300 dark:focus:border-sky-600"
+                        className="border-sky-100 focus:border-sky-300"
                         required
                       />
                     </div>
@@ -167,7 +183,7 @@ export default function Contact() {
                     <div>
                       <label
                         htmlFor="message"
-                        className="text-sm font-medium block mb-1.5 text-gray-700 dark:text-gray-300"
+                        className="text-sm font-medium block mb-1.5 text-gray-700"
                       >
                         Message
                       </label>
@@ -178,7 +194,7 @@ export default function Contact() {
                         onChange={handleChange}
                         placeholder="Your message..."
                         rows={4}
-                        className="border-sky-100 dark:border-sky-800 focus:border-sky-300 dark:focus:border-sky-600 resize-none"
+                        className="border-sky-100 focus:border-sky-300 resize-none"
                         required
                       />
                     </div>
@@ -214,10 +230,10 @@ export default function Contact() {
             transition={{ duration: 0.5, delay: 0.2 }}
             id="newsletter"
           >
-            <Card className="h-full border-sky-100 dark:border-sky-800 shadow-sm hover:shadow-md transition-shadow bg-white/85 backdrop-blur-sm">
+            <Card className="h-full border-sky-100 shadow-sm hover:shadow-md transition-shadow bg-white/85 backdrop-blur-sm">
               <CardContent className="p-8">
                 <div className="mb-6">
-                  <h2 className="text-2xl font-bold mb-2 text-sky-700 dark:text-sky-300">Stay Updated</h2>
+                  <h2 className="text-2xl font-bold mb-2 text-sky-700">Stay Updated</h2>
                   <div className="w-12 h-1 bg-gradient-to-r from-sky-400 to-sky-500 rounded-full mb-4"></div>
                   <p className="text-muted-foreground">
                     Subscribe to receive new articles, project updates, and environmental tech insights.
@@ -228,13 +244,13 @@ export default function Contact() {
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    className="bg-sky-50 dark:bg-sky-900/20 border border-sky-100 dark:border-sky-800 rounded-lg p-6 text-center"
+                    className="bg-sky-50 border border-sky-100 rounded-lg p-6 text-center"
                   >
-                    <CheckCircle className="h-12 w-12 mx-auto text-sky-500 dark:text-sky-400 mb-4" />
-                    <h3 className="text-xl font-semibold mb-2 text-sky-700 dark:text-sky-300">
+                    <CheckCircle className="h-12 w-12 mx-auto text-sky-500 mb-4" />
+                    <h3 className="text-xl font-semibold mb-2 text-sky-700">
                       Thanks for subscribing!
                     </h3>
-                    <p className="text-sky-600 dark:text-sky-400">
+                    <p className="text-sky-600">
                       You'll receive our next newsletter with the latest updates.
                     </p>
                   </motion.div>
@@ -243,7 +259,7 @@ export default function Contact() {
                     <div>
                       <label
                         htmlFor="newsletter-email"
-                        className="text-sm font-medium block mb-1.5 text-gray-700 dark:text-gray-300"
+                        className="text-sm font-medium block mb-1.5 text-gray-700"
                       >
                         Email Address
                       </label>
@@ -252,13 +268,13 @@ export default function Contact() {
                           id="newsletter-email"
                           type="email"
                           placeholder="your.email@example.com"
-                          className="pl-10 border-sky-100 dark:border-sky-800 focus:border-sky-300 dark:focus:border-sky-600"
+                          className="pl-10 border-sky-100 focus:border-sky-300 "
                           value={newsletterEmail}
                           onChange={(e) => setNewsletterEmail(e.target.value)}
                           required
                           disabled={isNewsletterSubmitting}
                         />
-                        <BellIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-sky-400 dark:text-sky-500" />
+                        <BellIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-sky-400" />
                       </div>
                     </div>
 
