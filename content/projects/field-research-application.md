@@ -1,107 +1,64 @@
 ---
-title: "Field Research Mobile Application"
-description: "A mobile app for ecological field researchers to collect, organize, and analyze data in remote locations"
-date: "July 8, 2022"
-coverImage: "/field-research-app.png"
-tags: ["Mobile App", "React Native", "Offline-First", "Field Research"]
-liveUrl: "https://field-research-app.example.com"
-githubUrl: "https://github.com/username/field-research-app"
+title: "Building My Portfolio in Tow Days"
+description: "I built my personal portfolio website in two days, focusing on a clear and maintainable design without unnecessary complexity."
+date: "22 Apr, 2025"
+coverImage: "Portfolio/portfolio_main.png"
+tags: ["Web App", "Next.js", "AWS", "Amplify", "v0"]
+liveUrl: "https://singbirds.net"
+githubUrl: "https://github.com/fairy-pitta/singbirds-portfolio"
 gallery: [
-  "/field-research-app.png",
-  "/bird-tracker-app.png"
+  "Portfolio/portfolio_project.png",
+  "Portfolio/portfolio_skills.png",
+  "Portfolio/portfolio_mobile.png",
 ]
 ---
 
-# Field Research Mobile Application
+## Overview
 
-## Project Overview
+I recently built my personal portfolio website over two days, focusing on keeping the process straightforward and efficient. Rather than overcomplicating the project, I aimed to create a clear, maintainable site that represents my work accurately.
 
-The Field Research Mobile Application is designed to support ecological researchers working in remote field locations. It provides tools for data collection, organization, and preliminary analysis, with robust offline functionality and synchronization capabilities when connectivity is restored.
+## Tech Stack and Workflow
 
-## Key Features
+- **Frontend Hosting:** [AWS Amplify](https://aws.amazon.com/amplify/)
+- **Domain Management:** [AWS Route 53](https://aws.amazon.com/route53/)
+- **Email (Contact Form & Newsletter):** [Resend](https://resend.com/)
+- **UI Design & Component Styling:** [v0.dev](https://v0.dev/) + [Shadcn UI](https://ui.shadcn.dev/)
+- **CSS Framework:** [Tailwind CSS](https://tailwindcss.com/)
+- **Framework:** [Next.js (App Router)](https://nextjs.org/)
 
-### Comprehensive Data Collection
+### Key Features
 
-The app supports various field data collection needs:
+- Fully responsive design
+- Blog and Projects that are easily editable
+- Markdown files converted to HTML for blog and project content to avoid repetitive HTML/CSS work
+- Animated bird flying across the top page
+- Smooth parallax backgrounds and scroll effects
+- Contact form and newsletter signup integrated with Resend
+- Clean and simple UI, composed with v0.dev and Shadcn components
+- Custom domain set up through AWS Route 53
 
-- Customizable data collection forms
-- GPS location tracking and mapping
-- Photo, audio, and video documentation
-- Specimen cataloging and tagging
-- Environmental measurements recording
+## Development Breakdown
 
-### Offline Functionality
+- **Day 1:**
+  - Defined the UI layout and page structure
+  - Adjusted and finalized the UI using v0.dev and Shadcn components
+  - Set up TailwindCSS and basic styling
 
-Designed for use in remote areas:
+- **Day 2:**
+  - Deployed the frontend to AWS Amplify
+  - Linked the contact form and newsletter features to Resend
+  - Configured a custom domain using AWS Route 53
+  - Finalized minor styling adjustments and tested responsiveness
 
-- Complete offline operation capability
-- Efficient local data storage
-- Background synchronization when connectivity is available
-- Conflict resolution for team data collection
-- Data integrity verification
+The two-day development timeline was manageable because of a straightforward workflow and familiarity with the tools used. Even with some additional refinements, the project could easily be completed within three days.
 
-### Field Analysis Tools
+## Reflections
 
-Preliminary data analysis in the field:
+This project demonstrates my ability to:
 
-- Basic statistical calculations
-- Temporal and spatial data visualization
-- Species accumulation curves
-- Comparison with historical data
-- Anomaly detection and flagging
+- Build a complete and maintainable site within a short time frame
+- Focus on clarity and simplicity in both design and development
+- Integrate external services like Resend smoothly
+- Handle domain setup, project deployment, and site operation independently
 
-## Technical Implementation
-
-### Mobile Application
-
-- React Native for cross-platform compatibility
-- SQLite for local data storage
-- Realm for offline-first data management
-- Native device integration (camera, GPS, sensors)
-- Optimized battery usage for extended field work
-
-### Backend Services
-
-- Node.js API for data synchronization
-- PostgreSQL with PostGIS for spatial data
-- Authentication and team management
-- Data validation and quality control
-- Export to common research formats
-
-### Integration Capabilities
-
-- Export to statistical packages (R, SPSS)
-- Integration with specimen database systems
-- Weather API integration for environmental context
-- Collaborative annotation and discussion
-- Publication-ready data formatting
-
-## Impact and Results
-
-The Field Research Application has been used by:
-
-- 25 research teams across 12 countries
-- Field studies spanning 40+ species
-- Long-term ecological monitoring programs
-- Remote biodiversity assessment expeditions
-
-Key outcomes include:
-
-- 60% reduction in data entry errors compared to paper methods
-- 40% time savings in data processing and organization
-- Improved data consistency across research teams
-- Enhanced capacity for rapid preliminary analysis in the field
-
-## Future Development
-
-Planned enhancements include:
-
-- Integration with environmental DNA sampling workflows
-- Advanced offline GIS capabilities
-- Machine learning for species identification assistance
-- Expanded sensor integration (weather stations, camera traps)
-- Augmented reality for field identification support
-
-## Acknowledgements
-
-This project was developed in collaboration with the Field Research Technology Consortium and received funding from the Scientific Data Collection Innovation Grant.
+If you're thinking about creating your own portfolio and would like some help, feel free to reach out. I'd be happy to discuss and support your project.
