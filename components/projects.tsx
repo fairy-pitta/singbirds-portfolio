@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge"
 import { ExternalLinkIcon, GithubIcon, EyeIcon } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import { useMobile } from "@/hooks/use-mobile"
 
 // 型定義を追加
 export interface ProjectFrontmatter {
@@ -31,13 +32,18 @@ interface ProjectsProps {
 }
 
 export default function Projects({ projects = [] }: ProjectsProps) {
+  const isMobile = useMobile()
+
+  // モバイル表示用に表示するプロジェクト数を制限
+  const displayedProjects = isMobile ? projects.slice(0, 3) : projects.slice(0, 6)
+
   return (
     <div className="min-h-screen py-20 relative overflow-hidden flex items-center">
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
@@ -54,12 +60,12 @@ export default function Projects({ projects = [] }: ProjectsProps) {
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
+            {displayedProjects.map((project, index) => (
               <motion.div
                 key={project.slug}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <Card className="hover-card h-full flex flex-col overflow-hidden bg-white/85 backdrop-blur-sm border-transparent">

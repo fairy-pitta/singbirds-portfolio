@@ -8,6 +8,7 @@ import { CalendarIcon, ClockIcon, ArrowRightIcon, TagIcon, ChevronLeftIcon, Chev
 import Link from "next/link"
 import { useRef, useState, useEffect } from "react"
 import Image from "next/image"
+import { useMobile } from "@/hooks/use-mobile"
 
 // 型定義を追加
 export interface BlogFrontmatter {
@@ -33,9 +34,15 @@ export default function Blog({ posts = [] }: BlogProps) {
   const scrollContainerRef = useRef<HTMLDivElement>(null)
   const [canScrollLeft, setCanScrollLeft] = useState(false)
   const [canScrollRight, setCanScrollRight] = useState(true)
+  const isMobile = useMobile()
+
+  // モバイル表示用に表示する記事数を制限
+  const displayedPosts = isMobile ? posts.slice(0, 3) : posts
 
   // スクロール位置を監視して矢印の表示/非表示を制御
   useEffect(() => {
+    if (isMobile) return // モバイルではスクロール監視不要
+
     const checkScroll = () => {
       if (scrollContainerRef.current) {
         const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current
@@ -62,7 +69,7 @@ export default function Blog({ posts = [] }: BlogProps) {
         scrollContainer.removeEventListener("scroll", checkScroll)
       }
     }
-  }, [posts]) // postsが変更されたときに再評価
+  }, [posts, isMobile]) // postsが変更されたときに再評価
 
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
@@ -82,7 +89,7 @@ export default function Blog({ posts = [] }: BlogProps) {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
@@ -97,7 +104,70 @@ export default function Blog({ posts = [] }: BlogProps) {
             <div className="h-8 w-8 border-4 border-sky-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
             <p className="mt-4 text-muted-foreground">Loading articles...</p>
           </div>
+        ) : isMobile ? (
+          // モバイル表示: 縦に並べる
+          <div className="grid grid-cols-1 gap-6">
+            {displayedPosts.map((post, index) => (
+              <motion.div
+                key={post.slug}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <Card className="hover-card h-full flex flex-col bg-white/85 backdrop-blur-sm border-transparent">
+                  <div className="aspect-video relative overflow-hidden">
+                    <Image
+                      src={post.frontmatter.coverImage || "/placeholder.svg?height=400&width=600&query=nature blog"}
+                      alt={post.frontmatter.title}
+                      fill
+                      className="object-cover transition-transform duration-500 hover:scale-105"
+                      sizes="100vw"
+                      quality={80}
+                    />
+                  </div>
+                  <CardContent className="p-6 flex-grow">
+                    <div className="flex items-center gap-3 text-sm text-muted-foreground mb-3">
+                      <span className="flex items-center">
+                        <CalendarIcon className="h-4 w-4 mr-1" />
+                        {post.frontmatter.date}
+                      </span>
+                      <span className="flex items-center">
+                        <ClockIcon className="h-4 w-4 mr-1" />
+                        {post.frontmatter.readTime}
+                      </span>
+                    </div>
+                    <Link href={`/blog/${post.slug}`} className="hover:text-sky-600 transition-colors">
+                      <h3 className="text-xl font-semibold mb-2">{post.frontmatter.title}</h3>
+                    </Link>
+                    <p className="text-muted-foreground mb-4 line-clamp-2">{post.frontmatter.excerpt}</p>
+                    <div className="flex flex-wrap gap-2 mt-auto">
+                      {post.frontmatter.tags.slice(0, 2).map((tag) => (
+                        <Link href={`/blog/tag/${tag.toLowerCase().replace(/\s+/g, "-")}`} key={tag}>
+                          <Badge variant="outline" className="hover:bg-sky-50 cursor-pointer">
+                            <TagIcon className="h-3 w-3 mr-1" />
+                            {tag}
+                          </Badge>
+                        </Link>
+                      ))}
+                      {post.frontmatter.tags.length > 2 && (
+                        <Badge variant="outline">+{post.frontmatter.tags.length - 2}</Badge>
+                      )}
+                    </div>
+                  </CardContent>
+                  <CardFooter className="px-6 pb-6 pt-0">
+                    <Button variant="ghost" className="p-0 h-auto text-sky-500 hover:text-sky-600" asChild>
+                      <Link href={`/blog/${post.slug}`}>
+                        Read more <ArrowRightIcon className="h-4 w-4 ml-1" />
+                      </Link>
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
         ) : (
+          // デスクトップ表示: 横スクロールカルーセル
           <div className="relative px-12 md:px-16">
             {/* スクロールボタン - 左 */}
             {posts.length > 3 && canScrollLeft && (
@@ -121,7 +191,7 @@ export default function Blog({ posts = [] }: BlogProps) {
                   key={post.slug}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true, amount: 0.3 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="flex-shrink-0 w-full md:w-[350px] px-3 snap-start"
                 >

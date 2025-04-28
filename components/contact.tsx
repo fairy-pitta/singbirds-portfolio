@@ -101,7 +101,7 @@ export default function Contact() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
@@ -116,7 +116,7 @@ export default function Contact() {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.5 }}
           >
             <Card className="h-full border-sky-100 shadow-sm hover:shadow-md transition-shadow bg-white/85 backdrop-blur-sm">
@@ -226,8 +226,8 @@ export default function Contact() {
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
             id="newsletter"
           >
             <Card className="h-full border-sky-100 shadow-sm hover:shadow-md transition-shadow bg-white/85 backdrop-blur-sm">
