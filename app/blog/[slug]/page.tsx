@@ -103,17 +103,6 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                 <BlogNewsletter />
               </div>
 
-              <div className="mt-12 pt-8 border-t">
-                <h3 className="text-xl font-semibold mb-4">Share this article</h3>
-                <div className="flex gap-4">
-                  <Button variant="outline" size="sm">
-                    Twitter
-                  </Button>
-                  <Button variant="outline" size="sm">
-                    Facebook
-                  </Button>
-                </div>
-              </div>
             </div>
           </div>
         </div>
