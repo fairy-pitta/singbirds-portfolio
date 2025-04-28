@@ -22,14 +22,7 @@ export default function Footer() {
               className="text-muted-foreground hover:text-sky-500 transition-colors"
               aria-label="GitHub"
             >
-              <GithubIcon className="h-5 w-5" />
-            </a>
-            <a
-              href="mailto:momotus.lessonii@gmail.com"
-              className="text-muted-foreground hover:text-sky-500 transition-colors"
-              aria-label="Email"
-            >
-              <MailIcon className="h-5 w-5" />
+              <GithubIcon className="h-6 w-6" />
             </a>
           </div>
         </div>
