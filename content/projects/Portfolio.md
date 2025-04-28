@@ -2,14 +2,14 @@
 title: "Building My Portfolio in Tow Days"
 description: "I built my personal portfolio website in two days, focusing on a clear and maintainable design without unnecessary complexity."
 date: "22 Apr, 2025"
-coverImage: "Portfolio/portfolio_main.png"
+coverImage: "/projects/Portfolio/portfolio_main.png"
 tags: ["Web App", "Next.js", "AWS", "Amplify", "v0"]
 liveUrl: "https://singbirds.net"
 githubUrl: "https://github.com/fairy-pitta/singbirds-portfolio"
 gallery: [
-  "Portfolio/portfolio_project.png",
-  "Portfolio/portfolio_skills.png",
-  "Portfolio/portfolio_mobile.png",
+  "/projects/Portfolio/portfolio_project.png",
+  "/projects/Portfolio/portfolio_skills.png",
+  "/projects/Portfolio/portfolio_mobile.png",
 ]
 ---
 
