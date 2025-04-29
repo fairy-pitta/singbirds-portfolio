@@ -29,7 +29,7 @@ export default function Hero() {
           priority
           quality={90}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-sky-100/95 via-sky-50/90 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-sky-100/95 via-sky-50/20 to-transparent"></div>
       </div>
       <div className="container mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
         <motion.div

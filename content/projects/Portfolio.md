@@ -1,5 +1,5 @@
 ---
-title: "Building My Portfolio in Tow Days"
+title: "Building My Portfolio in Two Days"
 description: "I built my personal portfolio website in two days, focusing on a clear and maintainable design without unnecessary complexity."
 date: "22 Apr, 2025"
 coverImage: "/projects/Portfolio/portfolio_main.png"
