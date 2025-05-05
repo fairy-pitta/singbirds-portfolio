@@ -1,4 +1,5 @@
-import { GithubIcon, MailIcon, TwitterIcon } from "lucide-react"
+import { GithubIcon, MailIcon } from "lucide-react"
+import Image from "next/image"
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -8,9 +9,20 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex flex-col items-center md:items-start">
-            <h3 className="text-xl font-bold gradient-text mb-2">SingBirds</h3>
+            <div className="flex items-center gap-2 mb-2">
+                <div className="w-8 h-8 rounded-full overflow-hidden">
+                  <Image
+                    src="/fairy-pitta.png"
+                    alt="SingBirds Logo"
+                    width={32}
+                    height={32}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              <h3 className="text-xl font-bold gradient-text">SingBirds</h3>
+            </div>
             <p className="text-sm text-muted-foreground text-center md:text-left">
-              Bridging environmental science and technology.
+              I Code Birds.
             </p>
           </div>
 
