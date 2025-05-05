@@ -21,15 +21,15 @@ export default function Hero() {
     <div className="min-h-screen flex flex-col justify-center relative overflow-hidden pt-20">
       <div className="absolute inset-0 z-0">
         <Image
-          src="/motmot.jpg"
-          alt="Yellow bird with black head"
+          src="/hero.JPG"
+          alt="mangrove blue flycatcher"
           fill
-          className="object-cover object-center opacity-80"
+          className="object-cover object-right"
           sizes="100vw"
           priority
           quality={90}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-sky-100/95 via-sky-50/20 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-transparent"></div>
       </div>
       <div className="container mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
         <motion.div
@@ -41,24 +41,21 @@ export default function Hero() {
           <div>
             <h1 className="text-4xl md:text-6xl font-bold mb-4">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-blue-500 drop-shadow-[0_1px_1px_rgba(0,0,0,0.15)]">
-                Bridging
+                I
               </span>{" "}
               <span className="bg-clip-text text-transparent bg-gradient-to-br from-emerald-400 via-green-500 to-teal-400 drop-shadow-[0_1px_1px_rgba(0,0,0,0.15)]">
-                Nature
-              </span>{" "}
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-blue-500 drop-shadow-[0_1px_1px_rgba(0,0,0,0.15)]">
-                &
+                Code
               </span>{" "}
               <span className="bg-clip-text text-transparent bg-gradient-to-br from-blue-400 via-indigo-500 to-purple-400 drop-shadow-[0_1px_1px_rgba(0,0,0,0.15)]">
-                Technology
+                Birds
               </span>
             </h1>
-            <h2 className="text-2xl md:text-3xl font-semibold text-sky-700">Environmental Tech Developer</h2>
+            <h2 className="text-2xl md:text-2xl italic font-semibold text-sky-700">Environmental Tech Developer</h2>
           </div>
 
           <p className="text-lg font-medium text-sky-800 max-w-xl leading-relaxed">
-            I blend environmental science with technology to create innovative solutions. Specializing in avian ethology
-            and computational science, I develop tools that bridge the gap between nature and digital worlds.
+            Birdsong, sightings, and behavior—mapped, analyzed, and reimagined through digital tools.
+            Rooted in avian ethology and based in Singapore, this work bridges ecological insight with interactive design.
           </p>
 
           <div className="flex flex-wrap gap-4">
