@@ -7,6 +7,7 @@ import { useTheme } from "next-themes"
 import { useMobile } from "@/hooks/use-mobile"
 import { usePathname, useRouter } from "next/navigation"
 import Link from "next/link"
+import Image from "next/image"
 
 interface NavLink {
   name: string
@@ -73,9 +74,18 @@ export default function Navbar() {
       }`}
     >
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <Link href="/" className="text-2xl font-bold gradient-text">
-          SingBirds
-        </Link>
+        <Link href="/" className="flex items-center gap-2">
+            <div className="w-8 h-8 rounded-full overflow-hidden">
+              <Image
+                src="/fairy-pitta.png"
+                alt="SingBirds Logo"
+                width={36}
+                height={36}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <span className="text-2xl font-bold gradient-text">SingBirds</span>
+          </Link>
 
         {isMobile ? (
           <>
