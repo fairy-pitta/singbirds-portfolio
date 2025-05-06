@@ -10,9 +10,9 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex flex-col items-center md:items-start">
             <div className="flex items-center gap-2 mb-2">
-                <div className="w-8 h-8 rounded-full overflow-hidden">
+                <div className="w-8 h-8 rounded-full overflow-hidden mr-2">
                   <Image
-                    src="/fairy-pitta.png"
+                    src="/pitta-gpt.png"
                     alt="SingBirds Logo"
                     width={32}
                     height={32}

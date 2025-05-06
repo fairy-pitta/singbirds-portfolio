@@ -75,12 +75,12 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full overflow-hidden">
+            <div className="w-8 h-8 rounded-full overflow-hidden mr-2">
               <Image
-                src="/fairy-pitta.png"
+                src="/pitta-gpt.png"
                 alt="SingBirds Logo"
-                width={36}
-                height={36}
+                width={32}
+                height={32}
                 className="w-full h-full object-cover"
               />
             </div>
