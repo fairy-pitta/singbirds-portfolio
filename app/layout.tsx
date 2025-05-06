@@ -5,14 +5,20 @@ import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
-import Head from "next/head"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "SingBirds | Environmental Tech Developer",
   description: "Portfolio of SingBirds - Environmental Technologist and Developer",
-    generator: 'v0.dev'
+  generator: "v0.dev",
+  applicationName: "SingBirds",
+  authors: [{ name: "SingBirds" }],
+  icons: {
+    icon: "/fairy-pitta.png",
+    shortcut: "/favicon.ico",
+    apple: "/apple-icon.png",
+  },
 }
 
 export default function RootLayout({
@@ -22,13 +28,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <Head>
-        <meta name="apple-mobile-web-app-title" content="SingBirds" />
-        <link rel="icon" type="image/png" href="/fairy-pitta.png" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#0ea5e9" />
-        <meta name="author" content="SingBirds" />
-      </Head>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} disableTransitionOnChange>
           <Navbar />
