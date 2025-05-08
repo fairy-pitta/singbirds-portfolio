@@ -45,9 +45,12 @@ export default function Contact() {
     setIsContactSubmitting(true)
   
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("https://resend-worker.shuna120700.workers.dev/api/contact", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { 
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+        },
         body: JSON.stringify(formState),
       })
   
@@ -73,9 +76,12 @@ export default function Contact() {
     setIsNewsletterSubmitting(true)
   
     try {
-      const response = await fetch("/api/newsletter", {
+      const response = await fetch("https://resend-worker.shuna120700.workers.dev/api/newsletter", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { 
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+      },
         body: JSON.stringify({ email: newsletterEmail }),
       })
   
