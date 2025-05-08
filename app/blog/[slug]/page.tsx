@@ -9,8 +9,8 @@ import BlogNewsletter from "@/components/blog-newsletter"
 import ScrollToTop from "@/components/scroll-to-top"
 
 // Generate dynamic metadata
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
-  const { slug } = await params
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const { slug } = params
   const post = await getBlogPost(slug)
 
   if (!post) {
@@ -26,13 +26,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
 }
 
-// Generate static paths
 export function generateStaticParams() {
   return getAllBlogSlugs()
 }
 
-export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params
+export default async function BlogPost({ params }: { params: { slug: string } }) {
+  const { slug } = params
   const post = await getBlogPost(slug)
 
   if (!post) {

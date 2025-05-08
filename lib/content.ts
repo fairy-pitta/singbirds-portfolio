@@ -53,13 +53,9 @@ export function getAllBlogSlugs() {
     const fileNames = fs.readdirSync(blogDirectory)
     return fileNames
       .filter((fileName) => fileName.endsWith(".md") || fileName.endsWith(".mdx"))
-      .map((fileName) => {
-        return {
-          params: {
-            slug: fileName.replace(/\.mdx?$/, ""),
-          },
-        }
-      })
+      .map((fileName) => ({
+        slug: fileName.replace(/\.mdx?$/, ""),
+      }))
   } catch (error) {
     console.error("Error getting blog slugs:", error)
     return []
@@ -75,13 +71,9 @@ export function getAllProjectSlugs() {
     const fileNames = fs.readdirSync(projectsDirectory)
     return fileNames
       .filter((fileName) => fileName.endsWith(".md") || fileName.endsWith(".mdx"))
-      .map((fileName) => {
-        return {
-          params: {
-            slug: fileName.replace(/\.mdx?$/, ""),
-          },
-        }
-      })
+      .map((fileName) => ({
+        slug: fileName.replace(/\.mdx?$/, ""),
+      }))
   } catch (error) {
     console.error("Error getting project slugs:", error)
     return []
