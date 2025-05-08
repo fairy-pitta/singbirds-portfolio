@@ -47,10 +47,7 @@ export default function Contact() {
     try {
       const response = await fetch("https://resend-worker.shuna120700.workers.dev/api/contact", {
         method: "POST",
-        headers: { 
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
-        },
+        headers: { "Content-Type": "application/json"},
         body: JSON.stringify(formState),
       })
   
@@ -78,14 +75,17 @@ export default function Contact() {
     try {
       const response = await fetch("https://resend-worker.shuna120700.workers.dev/api/newsletter", {
         method: "POST",
-        headers: { 
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
-      },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: newsletterEmail }),
       })
+
+      const resultText = await response.text()
+
+      if (!response.ok) {
+        console.error("Failed response body:", resultText)
+        throw new Error(`Failed to subscribe: ${response.status}`)
+      }
   
-      if (!response.ok) throw new Error("Failed to subscribe")
   
       setIsSubscribed(true)
       setNewsletterEmail("")
