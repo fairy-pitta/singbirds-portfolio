@@ -41,7 +41,7 @@ export default function Projects({ projects = [] }: ProjectsProps) {
     <div className="min-h-screen py-20 relative overflow-hidden flex items-center">
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.5 }}
@@ -63,14 +63,14 @@ export default function Projects({ projects = [] }: ProjectsProps) {
             {displayedProjects.map((project, index) => (
               <motion.div
                 key={project.slug}
-                initial={{ opacity: 0, y: 20 }}
+                initial={false}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                animate={{ opacity: 1, y: 0 }}
               >
                 <Card className="hover-card h-full flex flex-col overflow-hidden bg-white/85 backdrop-blur-sm border-transparent">
                   <div className="aspect-video relative overflow-hidden">
                     <Image
+                      priority
                       src={project.frontmatter.coverImage || "/placeholder.svg"}
                       alt={project.frontmatter.title}
                       fill
