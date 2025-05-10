@@ -21,21 +21,20 @@ export default function Hero() {
     <div className="min-h-screen flex flex-col justify-center relative overflow-hidden pt-20">
       <div className="absolute inset-0 z-0">
         <Image
+          priority
           src="/hero.JPG"
           alt="mangrove blue flycatcher"
           fill
           className="object-cover object-right"
           sizes="100vw"
-          priority
           quality={90}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-transparent"></div>
       </div>
       <div className="container mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1}}
           className="flex flex-col gap-6"
         >
           <div>

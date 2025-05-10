@@ -65,7 +65,6 @@ export default function Projects({ projects = [] }: ProjectsProps) {
                 key={project.slug}
                 initial={false}
                 whileInView={{ opacity: 1, y: 0 }}
-                animate={{ opacity: 1, y: 0 }}
               >
                 <Card className="hover-card h-full flex flex-col overflow-hidden bg-white/85 backdrop-blur-sm border-transparent">
                   <div className="aspect-video relative overflow-hidden">

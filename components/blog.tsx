@@ -87,10 +87,9 @@ export default function Blog({ posts = [] }: BlogProps) {
     <div className="min-h-screen py-20 relative overflow-hidden flex items-center">
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
           <h2 className="text-3xl font-bold mb-4 text-sky-800">Latest Articles</h2>
@@ -110,14 +109,14 @@ export default function Blog({ posts = [] }: BlogProps) {
             {displayedPosts.map((post, index) => (
               <motion.div
                 key={post.slug}
-                initial={{ opacity: 0, y: 20 }}
+                initial={false}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <Card className="hover-card h-full flex flex-col bg-white/85 backdrop-blur-sm border-transparent">
                   <div className="aspect-video relative overflow-hidden">
                     <Image
+                      priority
                       src={post.frontmatter.coverImage || "/placeholder.svg?height=400&width=600&query=nature blog"}
                       alt={post.frontmatter.title}
                       fill
@@ -189,15 +188,15 @@ export default function Blog({ posts = [] }: BlogProps) {
               {posts.map((post, index) => (
                 <motion.div
                   key={post.slug}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={false}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="flex-shrink-0 w-full md:w-[350px] px-3 snap-start"
                 >
                   <Card className="hover-card h-full flex flex-col bg-white/85 backdrop-blur-sm border-transparent">
                     <div className="aspect-video relative overflow-hidden">
                       <Image
+                        priority
                         src={post.frontmatter.coverImage || "/placeholder.svg?height=400&width=600&query=nature blog"}
                         alt={post.frontmatter.title}
                         fill
