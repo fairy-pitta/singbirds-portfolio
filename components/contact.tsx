@@ -114,6 +114,7 @@ export default function Contact() {
           <h2 className="text-3xl font-bold mb-4 text-sky-800">Connect With Me</h2>
           <p className="text-sky-600 max-w-2xl mx-auto">
             Have a question or want to stay updated? Reach out or subscribe to my newsletter.
+            If you have any bird-related ideas and want to see it come true, feel free to contact me as well!
           </p>
         </motion.div>
 
