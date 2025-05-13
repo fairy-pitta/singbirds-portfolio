@@ -102,6 +102,12 @@ export default function Skills() {
           simpleIconSlug: "vercel",
           color: "#000000",
         },
+        {
+          name: "Cloudflare",
+          description: "Global CDN, DNS, security, and hosting",
+          simpleIconSlug: "cloudflare",
+          color: "#F38020",
+        },
       ],
     },
     {
@@ -335,8 +341,8 @@ export default function Skills() {
         >
           <h2 className="text-3xl font-bold mb-4 text-sky-800">Skills & Expertise</h2>
           <p className="text-muted-foreground text-sky-600 max-w-2xl mx-auto">
-            My interdisciplinary background allows me to approach problems from multiple angles, combining technical
-            skills with environmental knowledge.
+            If you think my skills might be helpful for your work, feel free to reach out. I'm always open to bird-related ideas,
+            projects, or collaborations — happy to connect anytime!
           </p>
         </motion.div>
 
