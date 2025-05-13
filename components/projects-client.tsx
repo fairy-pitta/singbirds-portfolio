@@ -72,7 +72,7 @@ export default function ProjectsClient({ initialProjects }: ProjectsClientProps)
 
                 <div className="relative w-full md:w-64">
                   {/* 検索ボックスの色を変更 */}
-                  <SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-green-200 h-4 w-4" />
+                  <SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-green-200 h-5 w-5  z-10" />
                   <Input
                     type="text"
                     placeholder="Search projects..."

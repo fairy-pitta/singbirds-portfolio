@@ -96,7 +96,7 @@ export default function BlogClient({ initialPosts, initialTags }: BlogClientProp
                 </div>
 
                 <div className="relative w-full md:w-64">
-                  <SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-green-200 h-4 w-4" />
+                  <SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-green-200 h-4 w-4 z-10" />
                   <Input
                     type="text"
                     placeholder="Search articles..."
