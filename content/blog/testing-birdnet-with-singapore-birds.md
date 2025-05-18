@@ -13,7 +13,7 @@ How well can a machine tell the difference between a myna and a munia? This arti
 
 #### Setup and Progress
 
-I began by cloning the BirdNET-Analyzer repository and building a Docker image locally. There were a few bumps — the Dockerfile needed path fixes — but it was soon up and running.
+I began by cloning the [BirdNET-Analyzer repository](https://github.com/birdnet-team/BirdNET-Analyzer) and building a Docker image locally. There were a few bumps — the Dockerfile needed path fixes — but it was soon up and running.
 
 <details>
 <summary>Show Dockerfile</summary>
@@ -46,43 +46,43 @@ To make the experiment as relevant as possible, I used the 30 species selected f
 
 <details>
   <summary>List of the Birds are the following</summary>
-  <ol>
-    <li>Common Myna (Acridotheres tristis)</li>
-    <li>Large-billed Crow (Corvus macrorhynchos)</li>
-    <li>Yellow-vented Bulbul (Pycnonotus goiavier)</li>
-    <li>Asian Koel (Eudynamys scolopaceus)</li>
-    <li>White-breasted Waterhen (Amaurornis phoenicurus)</li>
-    <li>Asian Glossy Starling (Aplonis panayensis)</li>
-    <li>Scarlet-backed Flowerpecker (Dicaeum cruentatum)</li>
-    <li>Common Iora (Aegithina tiphia)</li>
-    <li>Swinhoe's White-eye (Zosterops simplex)</li>
-    <li>Collared Kingfisher (Todiramphus chloris)</li>
-    <li>Red Junglefowl (Gallus gallus)</li>
-    <li>Eurasian Tree Sparrow (Passer montanus)</li>
-    <li>White-throated Kingfisher (Halcyon smyrnensis)</li>
-    <li>Common Tailorbird (Orthotomus sutorius)</li>
-    <li>Rock Pigeon (Columba livia)</li>
-    <li>Olive-backed Sunbird (Cinnyris jugularis)</li>
-    <li>Spotted Dove (Spilopelia chinensis)</li>
-    <li>Brown-throated Sunbird (Anthreptes malacensis)</li>
-    <li>Blue-tailed Bee-eater (Merops philippinus)</li>
-    <li>Blue-throated Bee-eater (Merops viridis)</li>
-    <li>Pink-necked Green Pigeon (Treron vernans)</li>
-    <li>Sunda Pygmy Woodpecker (Yungipicus moluccensis)</li>
-    <li>Oriental Pied Hornbill (Anthracoceros albirostris)</li>
-    <li>Common Flameback (Dinopium javanense)</li>
-    <li>Scaly-breasted Munia (Lonchura punctulata)</li>
-    <li>Zebra Dove (Geopelia striata)</li>
-    <li>House Crow (Corvus splendens)</li>
-  </ol>
+<ol>
+  <li>Common Myna (<em>Acridotheres tristis</em>)</li>
+  <li>Large-billed Crow (<em>Corvus macrorhynchos</em>)</li>
+  <li>Yellow-vented Bulbul (<em>Pycnonotus goiavier</em>)</li>
+  <li>Asian Koel (<em>Eudynamys scolopaceus</em>)</li>
+  <li>White-breasted Waterhen (<em>Amaurornis phoenicurus</em>)</li>
+  <li>Asian Glossy Starling (<em>Aplonis panayensis</em>)</li>
+  <li>Scarlet-backed Flowerpecker (<em>Dicaeum cruentatum</em>)</li>
+  <li>Common Iora (<em>Aegithina tiphia</em>)</li>
+  <li>Swinhoe's White-eye (<em>Zosterops simplex</em>)</li>
+  <li>Collared Kingfisher (<em>Todiramphus chloris</em>)</li>
+  <li>Red Junglefowl (<em>Gallus gallus</em>)</li>
+  <li>Eurasian Tree Sparrow (<em>Passer montanus</em>)</li>
+  <li>White-throated Kingfisher (<em>Halcyon smyrnensis</em>)</li>
+  <li>Common Tailorbird (<em>Orthotomus sutorius</em>)</li>
+  <li>Rock Pigeon (<em>Columba livia</em>)</li>
+  <li>Olive-backed Sunbird (<em>Cinnyris jugularis</em>)</li>
+  <li>Spotted Dove (<em>Spilopelia chinensis</em>)</li>
+  <li>Brown-throated Sunbird (<em>Anthreptes malacensis</em>)</li>
+  <li>Blue-tailed Bee-eater (<em>Merops philippinus</em>)</li>
+  <li>Blue-throated Bee-eater (<em>Merops viridis</em>)</li>
+  <li>Pink-necked Green Pigeon (<em>Treron vernans</em>)</li>
+  <li>Sunda Pygmy Woodpecker (<em>Yungipicus moluccensis</em>)</li>
+  <li>Oriental Pied Hornbill (<em>Anthracoceros albirostris</em>)</li>
+  <li>Common Flameback (<em>Dinopium javanense</em>)</li>
+  <li>Scaly-breasted Munia (<em>Lonchura punctulata</em>)</li>
+  <li>Zebra Dove (<em>Geopelia striata</em>)</li>
+  <li>House Crow (<em>Corvus splendens</em>)</li>
+</ol>
 
 #### Species Not Used
 
 Out of the 30 Garden Birdwatch species, a few species couldn’t be retrieved from Xeno-Canto:
 
-* Javan Myna (*Acridotheres javanicus*)
-* Oriental Magpie-Robin (*Copsychus saularis*)
-* Black-naped Oriole (*Oriolus chinensis*)
+* Javan Myna (<em>Acridotheres javanicus</em>)
+* Oriental Magpie-Robin (<em>Copsychus saularis</em>)
+* Black-naped Oriole (<em>Oriolus chinensis</em>)
 
 > Some species are under extreme pressure due to trapping or harassment. The open availability of high-quality recordings of these species can make the problems even worse. For this reason, streaming and downloading of these recordings is disabled. ([xeno-canto](https://xeno-canto.org/help/FAQ#restricted))
 </details>
