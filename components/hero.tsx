@@ -20,15 +20,27 @@ export default function Hero() {
   return (
     <div className="min-h-screen flex flex-col justify-center relative overflow-hidden pt-20">
       <div className="absolute inset-0 z-0">
+      <picture>
+        <source
+          srcSet="/hero_mobile.webp"
+          type="image/webp"
+          media="(max-width: 500px)"
+        />
+        <source
+          srcSet="/hero_desktop.webp"
+          type="image/webp"
+          media="(min-width: 769px)"
+        />
         <Image
           priority
-          src="/hero.JPG"
+          src="/hero_desktop.webp" // fallback
           alt="mangrove blue flycatcher"
           fill
           className="object-cover object-right"
           sizes="100vw"
           quality={90}
         />
+      </picture>
         <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-transparent"></div>
       </div>
       <div className="container mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
