@@ -7,7 +7,7 @@ export default function ParallaxBackground() {
     <div className="fixed inset-0 w-full h-full z-[-1]">
       <div className="absolute inset-0 w-full h-full">
         <Image
-          src="/heron-reflection.png"
+          src="/sky.png"
           alt="Bird floating on water"
           fill
           className="object-cover"
