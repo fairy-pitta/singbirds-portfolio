@@ -77,11 +77,12 @@ export default function Navbar() {
         <Link href="/" className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-full overflow-hidden mr-2">
               <Image
-                src="/pitta-gpt.png"
+                src="/pitta-gpt.ico"
                 alt="SingBirds Logo"
                 width={32}
                 height={32}
                 className="w-full h-full object-cover"
+                priority
               />
             </div>
             <span className="text-2xl font-bold gradient-text">SingBirds</span>

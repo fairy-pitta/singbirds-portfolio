@@ -12,7 +12,7 @@ export default function Footer() {
             <div className="flex items-center gap-2 mb-2">
                 <div className="w-8 h-8 rounded-full overflow-hidden mr-2">
                   <Image
-                    src="/pitta-gpt.png"
+                    src="/pitta-gpt.ico"
                     alt="SingBirds Logo"
                     width={32}
                     height={32}

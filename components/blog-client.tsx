@@ -75,7 +75,7 @@ export default function BlogClient({ initialPosts, initialTags }: BlogClientProp
         <div className="relative overflow-hidden">
           {/* 鳥の背景画像を更新 */}
           <div className="absolute inset-0 z-0">
-            <Image src="/article_hero.JPG" alt="Bird perched on grass" fill className="object-cover" priority />
+            <Image src="/article_hero.webp" alt="Bird perched on grass" fill className="object-cover" priority />
               {/* ヘッダー部分の背景グラデーションを緑色に調整 */}
             <div className="absolute inset-0 bg-gradient-to-r from-green-800/70 via-green-700/60 to-green-600/50"></div>
           </div>
