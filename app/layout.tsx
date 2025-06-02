@@ -11,7 +11,6 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "SingBirds | Environmental Tech Developer",
   description: "Portfolio of SingBirds - Environmental Technologist and Developer",
-  generator: "v0.dev",
   applicationName: "SingBirds",
   authors: [{ name: "SingBirds" }],
   icons: {
