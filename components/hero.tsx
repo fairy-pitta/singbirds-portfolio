@@ -22,7 +22,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
       <picture>
         <source
-          srcSet="/hero_mobile.png"
+          srcSet="/hero_mobile.webp"
           type="image/webp"
           media="(max-width: 500px)"
         />
