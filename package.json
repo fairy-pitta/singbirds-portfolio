@@ -3,8 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "next build",
-    "postbuild": "npx @cloudflare/next-on-pages --skip-build",
+    "build": "npx @cloudflare/next-on-pages --experimental-minimal",
     "dev": "next dev",
     "start": "next start",
     "lint": "next lint"
