@@ -1,3 +1,6 @@
-name = "singbirds-portfolio"
-compatibility_date = "2025-07-12"
+# wrangler.toml ── ルートに置いて Git にコミット
+name                 = "singbirds-portfolio"
+compatibility_date   = "2025-07-12"
+
+pages_build_output_dir = ".vercel/output/static"
 compatibility_flags = ["nodejs_compat"]
