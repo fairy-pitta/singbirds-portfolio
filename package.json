@@ -1,9 +1,10 @@
 {
-  "name": "my-v0-project",
+  "name": "portfolio",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "npx @cloudflare/next-on-pages --outdir .vercel/output",
+    "build": "next build",
+    "postbuild": "npx @cloudflare/next-on-pages --skip-build --output-dir=.vercel/output",
     "dev": "next dev",
     "start": "next start",
     "lint": "next lint"
