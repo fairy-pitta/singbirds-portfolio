@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild":  "npx @cloudflare/next-on-pages --output-dir=.vercel/output",
+    "postbuild": "npx @cloudflare/next-on-pages --outdir .vercel/output/static",
     "start": "next start",
     "lint": "next lint"
   },
