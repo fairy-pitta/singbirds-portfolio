@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "export": "next export",  
+    "build:cloudflare": "npm run build && npx @cloudflare/next-on-pages --outdir ./.vercel/output/static",
     "start": "next start",
     "lint": "next lint"
   },
@@ -73,6 +73,7 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
+    "@cloudflare/next-on-pages": "^1.13.12",
     "@tailwindcss/typography": "^0.5.16",
     "@types/node": "^22",
     "@types/react": "^19",
