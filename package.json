@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "postbuild": "npx @cloudflare/next-on-pages --skip-build --output-dir=.vercel/output",
+    "postbuild": "npx @cloudflare/next-on-pages --skip-build",
     "dev": "next dev",
     "start": "next start",
     "lint": "next lint"
