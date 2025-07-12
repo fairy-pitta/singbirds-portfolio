@@ -3,9 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "build": "npx @cloudflare/next-on-pages --outdir .vercel/output",
     "dev": "next dev",
-    "build": "next build",
-    "postbuild": "npx @cloudflare/next-on-pages --outdir .vercel/output/static",
     "start": "next start",
     "lint": "next lint"
   },
